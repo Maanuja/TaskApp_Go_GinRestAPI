@@ -62,6 +62,25 @@ func Create() *cli.App {
 					return DeleteTaskByID(c)
 				},
 			},
+			{
+				Name:  "serve",
+				Usage: "Start the server",
+				// Flags: []cli.Flag{
+				// 	&cli.StringFlag{
+				// 		Name:    "port",
+				// 		Aliases: []string{"pt"},
+				// 		Value:   "8083",
+				// 	},
+				// 	&cli.StringFlag{
+				// 		Name:    "host",
+				// 		Aliases: []string{"ht"},
+				// 		Value:   "localhost",
+				// 	},
+				// },
+				Action: func(c *cli.Context) error {
+					return httpServer(c)
+				},
+			},
 		},
 	}
 }
